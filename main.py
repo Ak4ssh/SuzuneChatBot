@@ -61,7 +61,7 @@ async def Suzuneai(client: Client, message: Message):
            is_chat = chatai.find({"word": message.text})                 
            for x in is_chat:
                K.append(x['text'])
-           hey = random.choice(K)
+           hey = choice(K)
            is_text = chatai.find_one({"text": hey})
            Yo = is_text['check']
            if Yo == "sticker":
@@ -97,7 +97,7 @@ async def Suzunestickerai(client: Client, message: Message):
        is_chat = chatai.find({"word": message.sticker.file_unique_id})                 
        for x in is_chat:
            K.append(x['text'])
-       hey = random.choice(K)
+       hey = choice(K)
        is_text = chatai.find_one({"text": hey})
        Yo = is_text['check']
        if Yo == "text":
@@ -149,7 +149,7 @@ async def Suzuneprivate(client: Client, message: Message):
        is_chat = chatai.find({"word": message.text})                 
        for x in is_chat:
            K.append(x['text'])
-       hey = random.choice(K)
+       hey = choice(K)
        is_text = chatai.find_one({"text": hey})
        Yo = is_text['check']
        if Yo == "sticker":
@@ -192,7 +192,7 @@ async def Suzuneprivatesticker(client: Client, message: Message):
        is_chat = chatai.find({"word": message.sticker.file_unique_id})                 
        for x in is_chat:
            K.append(x['text'])
-       hey = random.choice(K)
+       hey = choice(K)
        is_text = chatai.find_one({"text": hey})
        Yo = is_text['check']
        if Yo == "text":
