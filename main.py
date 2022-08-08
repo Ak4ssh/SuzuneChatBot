@@ -45,7 +45,7 @@ async def Suzuneai(client: Client, message: Message):
        is_chat = chatai.find({"word": message.text})                 
        for x in is_chat:
            K.append(x['text'])
-       hey = random.choice(K)
+       hey = choice(K)
        is_text = chatai.find_one({"text": hey})
        Yo = is_text['check']
        if Yo == "sticker":
