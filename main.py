@@ -48,7 +48,7 @@ bot = Client(
     bot_token = BOT_TOKEN
 )
 
-
+me = bot.get_me()
 @bot.on_message(filters.command(["start"], prefixes=["/", "!"]))
 async def start(client, message):
         await message.reply_text("Hi! My name is Suzune an AI Based ChatBot")
@@ -253,7 +253,7 @@ async def makerun():
    |    Source code: https://github.com/desinobita/SuzuneChatBot   |
    +===============+===============+===============+===============+''')
     LOGGER.info(
-            f"Pyrogram v{__version__} (Layer - {layer}) started on {BOT_TOKEN}",
+            f"Pyrogram v{__version__} (Layer - {layer}) started on {me.username}",
         )
   
 bot.run(makerun())
